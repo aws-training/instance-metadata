@@ -1,7 +1,7 @@
 <?php
      	// create curl resource
         $ch = curl_init();
-        $metadata = "http://169.254.169.254/latest/meta-data";
+        $metadata = "http://169.254.169.254/latest/meta-data/";
 
         // set url
         curl_setopt($ch, CURLOPT_URL, "$metadata");
