@@ -1,10 +1,10 @@
 <?php
      	// create curl resource
         $ch = curl_init();
-        $publicip = "http://169.254.169.254/latest/meta-data/public-ipv4";
+        $metadata = "http://169.254.169.254/latest/meta-data";
 
         // set url
-        curl_setopt($ch, CURLOPT_URL, "$publicip");
+        curl_setopt($ch, CURLOPT_URL, "$metadata");
 
         //return the transfer as a string
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -16,5 +16,5 @@
         curl_close($ch);
 
         //Get the public IP address
-        echo "The public IP address for your EC2 instance is $output";
+        echo "The metadata for your EC2 instance is $output";
 ?>
